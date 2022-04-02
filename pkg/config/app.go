@@ -1,8 +1,8 @@
 package config
 
 import (
-	"log"
-
+	"github.com/shiowwj/go-cointracker-crud/pkg/utils/log"
+	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -16,7 +16,7 @@ func Connect() {
 	dsn := "host=localhost user=shwj password=1234 dbname=cointracker_test port=5432"
 	d, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Panic(err)
+		log.Fatal("Connect", zap.Error(err))
 	}
 
 	db = d
