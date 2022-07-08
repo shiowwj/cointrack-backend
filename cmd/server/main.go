@@ -18,9 +18,10 @@ func main() {
 	routes.RegisterPortfolioAssetsRoutes(r)
 
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:8080"},
+		AllowedOrigins:   []string{"http://localhost:8080", "http://localhost:8080/dashboard"},
 		AllowCredentials: true,
 		AllowedMethods:   []string{"GET", "POST", "DELETE", "PUT"},
+		AllowedHeaders:   []string{"content-type", "Uuid"},
 	})
 	handler := c.Handler(r)
 	// http.Handle("/", handler)

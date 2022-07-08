@@ -5,6 +5,7 @@ import (
 	"github.com/shiowwj/go-cointracker-crud/pkg/controllers"
 )
 
+// TODO: add validators to check incoming response
 var RegisterPortfolioAssetsRoutes = func(r *mux.Router) {
 
 	// portfolio endpoint
